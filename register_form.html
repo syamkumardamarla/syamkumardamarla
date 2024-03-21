@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .registration-form {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: calc(100% - 12px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form action="/userreg" method="post" class="registration-form" onsubmit="return validateForm()">
+      <h2>Register Here !</h2>
+      <div class="form-group">
+        <label for="name"></label>
+        <input type="text" placeholder="Name" id="name" name="name" required>
+        <span id="nameError" class="error-message"></span>
+      </div>
+      <div class="form-group">
+        <label for="email"></label>
+        <input type="email" placeholder="Email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password"></label>
+        <input type="password" placeholder="Password" id="password" name="password" required>
+        <span id="passwordError" class="error-message"></span>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var password = document.getElementById("password").value;
+      var namePattern = /^[a-zA-Z\s]*$/; // Only allows letters and spaces
+      var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/; // Requires at least one uppercase, one lowercase, one digit, one special character, and minimum 8 characters
+      
+      var nameError = document.getElementById("nameError");
+      var passwordError = document.getElementById("passwordError");
+      
+      nameError.innerHTML = "";
+      passwordError.innerHTML = "";
+
+      if (!namePattern.test(name)) {
+        nameError.innerHTML = "Name should contain only letters and spaces.";
+        return false;
+      }
+
+      if (!passwordPattern.test(password)) {
+        passwordError.innerHTML = "Password should be minimum 8 characters length and contain at least one uppercase, one lowercase, one digit, and one special character.";
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Turret+Road:700|Vibes&display=swap" rel="stylesheet">
+  <title>About Us</title>
+  <style> 
+body{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+}
+
+a,
+a:hover,
+a:focus{
+  color: white;
+  text-decoration: none;
+}
+
+.content{
+  /* margin: 90px 198px !important; */
+  margin: 90px 198px;
+  height: 380px;
+  
+}
+
+.container {
+  background: url(https://static.wixstatic.com/media/2ea7e0_cc0ac8333a304c96876114dad5efb742~mv2.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  clip: rect(0, auto, auto, 0);
+}
+.container:nth-child(1) {
+  top: 0;
+  z-index: 1;
+}
+
+.container:nth-child(2) {
+  top: 100vh;
+  z-index: 2;
+}
+.container:nth-child(2) .inner-container {
+  background: url(https://images-prod.healthline.com/hlcmsresource/images/AN_images/healthy-low-carb-meals-1296x728-meatza.jpg);
+  background-size: cover;
+}.container:nth-child(3) {
+  top: 200vh;
+  z-index: 3;
+}
+.container:nth-child(3) .inner-container {
+  background: url(https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+  background-size: cover;
+}.inner-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
+}
+.inner-container:not(:hover) {
+  transform: perspective(100vh);
+}.content {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 200px 20%;
+  padding: 10%;
+}h1 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.8em;
+}p {
+  color: white;
+  margin: 10px 0;
+  line-height: 1.4em;
+}
+.picture {
+  z-index: 99;
+  width: 150px;
+  height: auto;
+  border-radius: 21%;
+  margin-right: 80px;
+  margin-left:30px;
+}
+.location{
+  display:flex;
+}
+
+@media only screen and (max-width: 600px) {
+ h1 {
+   font-size: 18px;
+ }
+}
+@media only screen and (max-width: 400px) {
+ h1 {
+   font-size: 15px;
+ }
+}
+/* @media only screen and (max-width: 400px) {
+ .inner-container {
+   padding:0;
+   margin:100;
+ } */
+/* } */
+@media only screen and (max-width: 500px) {
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+header{
+   display: flex;
+   background-color: rgba(0,0,0,0.5);
+   width: 100%;
+   height: 6vh;
+   margin: 0;
+   padding: 10px;
+   color: white;
+   font-family: 'Turret Road', cursive;
+   font-size: 33px;
+   justify-items: space-around;
+   z-index: 4;
+}
+header
+{
+   position:fixed;
+   top:0;
+}
+
+.nav-link,
+.nav-link:hover,
+.nav-link:focus {
+   display: inline-flex;
+   padding: 0px 9px;
+   color: white;
+   text-decoration: none;
+}
+@media only screen and (min-width: 501px){
+  .content{
+    margin-top:150px;
+    margin-bottom:200px;
+    padding:30px;
+      }
+  p{
+    font-size:15px;
+    padding:0px;
+  }
+  h1{
+    font-size:18px;
+  }
+  
+}
+@media only screen and (max-width: 680px){
+  .content{
+    margin-top:100px;
+    margin-bottom:400px;
+    /* margin-left:20%;
+    margin-right:20%; */
+    padding:10px;
+      }
+  p{
+    font-size:11px;
+    padding:0px;
+  }
+  /* h1{
+    font-size:15px;
+  } */
+  .picture{
+    width:100px;
+    height:auto;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
+  header{
+    padding:10px;
+
+  }
+}
+</style>
+</head>
+<body>
+        <header>
+                <nav class="nav">
+                        <a class="nav-link active" href="/">Home</a>
+                        <a class="nav-link" href="/about">About Us</a>
+                        <a class="nav-link" href="/menu">Menu</a>
+                      </nav>
+           </header>
+
+      <div class="container">         
+        <div class="inner-container">
+                  <div></div>
+                  <div class="content">
+                      <div class="location">
+                          <img class="picture" src="{{url_for('static',filename='images/chanakya_profile.jpg')}}"/>
+                          <img class="picture" src="{{url_for('static',filename='images/eswar_profile.jpeg')}}"/>
+                        </div>
+                          <h1>Chanakya   &  Eswar Sai</h1>
+                      <p>Hi,,We are As the Project Coordinators and Frontend Developers, our role encompasses project ideation, execution, frontend development using HTML and jQuery, and permission management & develop project plans, and monitor progress for timely delivery.we implements dynamic features and user-friendly interfaces.Furthermore, we performed testing and debugging. Through meticulous testing methodologies, we identify and rectify any  issues or bugs.we r excited to have completed our first group project & collaborative spirit were invaluable to our team's success, and we are grateful for this contributions throughout the project.
+                      </p>
+                   </div>
+              </div>
+          </div>
+
+          <div class="container">         
+            <div class="inner-container">
+                      <div></div>
+                      <div class="content">
+                          <div class="location">
+                              <img class="picture" src="{{url_for('static',filename='images/maha_profile.jpeg')}}"/>
+                          </div>
+                              <h1>Maha Lakshmi</h1>
+                          <p>Hi,,As a Frontend Developer and MongoDB Support specialist,developed and implementing HTML and CSS solutions for seamless user experiences. With proficiency in MongoDB, I ensure robust database integration, optimizing backend performance. Her expertise lies in translating design concepts into responsive web interfaces and implementing dynamic features. Mahalakshmi's attention to detail and problem-solving skills elevate project quality and efficiency & collaborates effectively with my team to streamline development workflows and deliver scalable solutions.I'm excited to have completed our first group project & collaborative spirit were invaluable to our team's success, and we are grateful for his contributions throughout the project.
+                          </p>
+                       </div>
+                    </div>
+              </div>
+      
+          
+          <div class="container">         
+            <div class="inner-container">
+                      <div></div>
+                      <div class="content">
+                          <div class="location">
+                              <img class="picture" src="{{url_for('static',filename='images/Syam_profile.jpg')}}"/>
+                            </div>
+                              <h1>Syam Kumar</h1>
+                          <p>Hi,,I played a pivotal role in our project's success by focusing on integrating APIs using Flask, a Python web framework.
+                            Additionally,I took charge of developing the registration and login forms, implementing robust authentication mechanisms to ensure secure access,to store user details efficiently in MongoDB, a NoSQL database, I'm excited to have completed our first group project & collaborative spirit were invaluable to our team's success, and we are grateful for his contributions throughout the project.
+                          </p>
+                       </div>
+                   </div>
+                </div>
+              
+</body>
+</html>
